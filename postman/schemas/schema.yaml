@@ -1,0 +1,340 @@
+openapi: 3.0.0
+info:
+  version: v0.2.0
+  title: Restaurants
+  description: "This is an API for managing details of restaurants."
+servers:
+  - url: "https://3d2737e6-912a-44bc-a3ae-3f9cb33fd1d2.mock.pstmn.io"
+paths:
+  /user:
+    post:
+      summary: 'create a user'
+      operationId: createUser
+      tags:
+        - user
+      requestBody:
+        required: true
+        description: 'enter user details'
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        "201":
+          description: 'user created'
+          headers:
+            auth-token:
+              description: 'Authorization token '
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+    put:
+      summary: 'update user details'
+      operationId: 'updateUser'
+      tags:
+        - User
+      requestBody:
+        description: 'send changed data'
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserChange"
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: 'Authorization token'
+          schema:
+              type: string
+      responses:
+        "204":
+          description: 'user details modified'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+    delete:
+      summary: 'delete user'
+      operationId: deleteUser
+      tags:
+        - User
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: 'Authorization token'
+          schema:
+              type: string
+      responses:
+        "204":
+          description: 'user is deleted'
+  /user/login:
+    post:
+      summary: 'login user'
+      operationId: loginUser
+      tags:
+        - user
+      requestBody:
+        required: true
+        description: 'enter login credentials'
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginUser"
+      responses:
+        "200":
+          description: 'user logged in'
+          headers:
+            auth-token:
+              description: 'Authorization token '
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+  /user/logout:
+    get:
+      summary: 'logout user'
+      operationId: logoutUser
+      tags:
+        - user
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: 'Authorization token'
+          schema:
+              type: string
+      responses:
+        "200":
+          description: 'user logged out'
+          content:
+            application/json: 
+              schema:
+                $ref: "#/components/schemas/User"
+  /song:
+    get:
+      summary: 'list all songs'
+      operationId: listAllSongs
+      tags:
+        - song
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: 'Authorization token'
+          schema:
+              type: string
+      responses:
+        "200":
+          description: 'all songs'
+          content:
+            application/json: 
+              schema:
+                $ref: "#/components/schemas/AllSong"
+  /song/{id}:
+    get:
+      summary: 'list one song'
+      operationId: listOneSong
+      tags:
+        - song
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: 'Authorization token'
+          schema:
+              type: string
+        - name: id
+          in: path
+          description: Unique id for song.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: 'one song details'
+          content:
+            application/json: 
+              schema:
+                $ref: "#/components/schemas/Song"
+  /artist:
+    get:
+      summary: 'list all artists'
+      operationId: listAllArtist
+      tags:
+        - artist
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: 'Authorization token'
+          schema:
+              type: string
+      responses:
+        "200":
+          description: 'all artists'
+          content:
+            application/json: 
+              schema:
+                $ref: "#/components/schemas/AllArtist"
+  /artist/{id}:
+    get:
+      summary: 'list one artist'
+      operationId: listOneArtist
+      tags:
+        - artist
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: 'Authorization token'
+          schema:
+              type: string
+        - name: id
+          in: path
+          description: Unique id for artist.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: 'one artist details'
+          content:
+            application/json: 
+              schema:
+                $ref: "#/components/schemas/AllSong"
+  /album:
+    get:
+      summary: 'list all albums'
+      operationId: listAllAlbums
+      tags:
+        - album
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: 'Authorization token'
+          schema:
+              type: string
+      responses:
+        "200":
+          description: 'all albums'
+          content:
+            application/json: 
+              schema:
+                $ref: "#/components/schemas/AllAlbum"
+  /album/{id}:
+    get:
+      summary: 'list one album'
+      operationId: listOneAlbum
+      tags:
+        - album
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: 'Authorization token'
+          schema:
+              type: string
+        - name: id
+          in: path
+          description: Unique id for artist.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: 'one album details'
+          content:
+            application/json: 
+              schema:
+                $ref: "#/components/schemas/AllSong"
+components:
+  schemas:
+    AllAlbum:
+      type: array
+      items: 
+        $ref: "#/components/schemas/Artist"
+    Album:
+      type: object
+      properties:
+        name:
+          description: "Album name"
+          type: string
+    AllArtist:
+      type: array
+      items: 
+        $ref: "#/components/schemas/Artist"
+    Artist:
+      type: object
+      properties:
+        name:
+          description: "Artist name"
+          type: string
+    AllSong:
+      type: array
+      items: 
+        $ref: "#/components/schemas/Song"
+    Song:
+      type: object
+      required:
+        - name
+        - link
+      properties:
+        name:
+          description: "Email of the user"
+          type: string
+        link:
+          description: "Password of the user"
+          type: string
+        artist:
+          description: "Email of the user"
+          type: string
+        album:
+          description: "Password of the user"
+          type: string
+    LoginUser:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          description: "Email of the user"
+          type: string
+        password:
+          description: "Password of the user"
+          type: string
+    UserChange:
+      type: object
+      required:
+        - name
+        - email
+      properties:
+        name:
+          description: "Name of the user"
+          type: string
+        email:
+          description: "Email of the user"
+          type: string
+    User:
+      type: object
+      required:
+        - name
+        - email
+        - password
+      properties:
+        name:
+          description: "Name of the user"
+          type: string
+        email:
+          description: "Email of the user"
+          type: string
+        password:
+          description: "password of the user"
+          type: boolean
