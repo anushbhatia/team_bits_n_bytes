@@ -1,0 +1,760 @@
+{
+    "info": {
+        "_postman_id": "db2c7de1-8fcc-41c2-b45f-93fca415fa8f",
+        "name": "v1",
+        "description": "This is an API for managing details of restaurants.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "user",
+            "item": [
+                {
+                    "name": "create a user",
+                    "id": "f58b851a-3d57-40d9-84c7-4eb1fef98a1a",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"exercitation occaecat laboris\",\n    \"email\": \"cupidatat est\",\n    \"password\": true\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/user",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "user"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "90747389-3ebe-4846-b2d4-26dc58991693",
+                            "name": "user created",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"name\": \"exercitation occaecat laboris\",\n    \"email\": \"cupidatat est\",\n    \"password\": true\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/user",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "user"
+                                    ]
+                                }
+                            },
+                            "status": "Created",
+                            "code": 201,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "disabled": false,
+                                    "description": "Authorization token ",
+                                    "key": "auth-token",
+                                    "value": "eu Ut elit Exce"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n \"name\": \"exercitation occaecat laboris\",\n \"email\": \"cupidatat est\",\n \"password\": true\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "update user details",
+                    "id": "a8710c4b-fbd6-4dfe-a367-93af1cab5cc2",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"officia et ullamco sit laborum\",\n    \"email\": \"minim tempor non Duis\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/user",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "user"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "93733b5a-8bce-4edb-959d-bb73360ca303",
+                            "name": "user details modified",
+                            "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "description": "(Required) Authorization token",
+                                        "key": "Authorization",
+                                        "value": "eu Ut elit Exce"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"name\": \"officia et ullamco sit laborum\",\n    \"email\": \"minim tempor non Duis\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/user",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "user"
+                                    ]
+                                }
+                            },
+                            "status": "No Content",
+                            "code": 204,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n \"name\": \"exercitation occaecat laboris\",\n \"email\": \"cupidatat est\",\n \"password\": true\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "delete user",
+                    "id": "1a94a040-ac23-40eb-ba25-a71f0c5d789a",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/user",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "user"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "9ed4f071-cd31-4e36-abb3-65a1c5c3d406",
+                            "name": "user is deleted",
+                            "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "description": "(Required) Authorization token",
+                                        "key": "Authorization",
+                                        "value": "eu Ut elit Exce"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/user",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "user"
+                                    ]
+                                }
+                            },
+                            "status": "No Content",
+                            "code": 204,
+                            "_postman_previewlanguage": "text",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "text/plain"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "login user",
+                    "id": "d8043cc9-e864-45ea-ae60-4750a4c8c7e8",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"id irure in voluptate nost\",\n    \"password\": \"anim\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/user/login",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "user",
+                                "login"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "4ec7cba2-eca3-4703-a5bf-f21158957384",
+                            "name": "user logged in",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"email\": \"id irure in voluptate nost\",\n    \"password\": \"anim\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/user/login",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "user",
+                                        "login"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "disabled": false,
+                                    "description": "Authorization token ",
+                                    "key": "auth-token",
+                                    "value": "eu Ut elit Exce"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n \"name\": \"exercitation occaecat laboris\",\n \"email\": \"cupidatat est\",\n \"password\": true\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "logout user",
+                    "id": "a359ec4c-6e19-46cf-b2af-a7cf9a6fd714",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/user/logout",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "user",
+                                "logout"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "1bc47752-cf56-4d06-81f8-088a68c6c097",
+                            "name": "user logged out",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "(Required) Authorization token",
+                                        "key": "Authorization",
+                                        "value": "eu Ut elit Exce"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/user/logout",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "user",
+                                        "logout"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n \"name\": \"exercitation occaecat laboris\",\n \"email\": \"cupidatat est\",\n \"password\": true\n}"
+                        }
+                    ]
+                }
+            ],
+            "id": "90db4007-3c5a-4394-b1ab-6cb9a394a40f"
+        },
+        {
+            "name": "song",
+            "item": [
+                {
+                    "name": "list all songs",
+                    "id": "f87581e0-ae44-4dc8-b900-13ee86dbcb42",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/song",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "song"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "d5ea95fb-3a39-49c8-b5cb-cd1392e8374f",
+                            "name": "all songs",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "(Required) Authorization token",
+                                        "key": "Authorization",
+                                        "value": "eu Ut elit Exce"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/song",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "song"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n {\n  \"name\": \"est ad ullamco\",\n  \"link\": \"amet nisi\",\n  \"artist\": \"aliquip minim voluptate non\",\n  \"album\": \"dolor\"\n },\n {\n  \"name\": \"labore eu\",\n  \"link\": \"est eiusmod cupidatat in\",\n  \"artist\": \"quis magna cillum dolor\",\n  \"album\": \"laborum dolor Ut non inci\"\n }\n]"
+                        }
+                    ]
+                },
+                {
+                    "name": "list one song",
+                    "id": "8f991933-a5f8-405e-b35e-91b56a6533b4",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/song/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "song",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "id": "b7f1c7b8-34b6-4d0f-b925-6a9ac05456ab",
+                                    "key": "id",
+                                    "value": "eu Ut elit Exce",
+                                    "description": "(Required) Unique id for song."
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "34c1b682-fda1-4b06-a8d2-1bc89ef2840f",
+                            "name": "one song details",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "(Required) Authorization token",
+                                        "key": "Authorization",
+                                        "value": "eu Ut elit Exce"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/song/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "song",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "eu Ut elit Exce",
+                                            "description": "(Required) Unique id for song."
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n \"name\": \"ad\",\n \"link\": \"incididunt laboris\",\n \"artist\": \"dolor elit ut\",\n \"album\": \"ea elit\"\n}"
+                        }
+                    ]
+                }
+            ],
+            "id": "b6eb3495-b824-427d-b3ae-dbd080ec606f"
+        },
+        {
+            "name": "artist",
+            "item": [
+                {
+                    "name": "list all artists",
+                    "id": "f03cb16f-62fc-467e-a511-fd4d470873ae",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/artist",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "artist"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "d3c3ff8a-10a7-4b3a-903f-392aeb82e1c4",
+                            "name": "all artists",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "(Required) Authorization token",
+                                        "key": "Authorization",
+                                        "value": "eu Ut elit Exce"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/artist",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "artist"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n {\n  \"name\": \"sint quis nostrud reprehenderit enim\"\n },\n {\n  \"name\": \"laborum tempor dolor\"\n }\n]"
+                        }
+                    ]
+                },
+                {
+                    "name": "list one artist",
+                    "id": "d447c697-bba6-4636-9fa2-d027864f71ac",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/artist/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "artist",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "id": "09077e88-76f8-4c9d-8585-58d83565ac7d",
+                                    "key": "id",
+                                    "value": "eu Ut elit Exce",
+                                    "description": "(Required) Unique id for artist."
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "8a36bec8-7b67-4bf1-ba4e-f764bbe04f89",
+                            "name": "one artist details",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "(Required) Authorization token",
+                                        "key": "Authorization",
+                                        "value": "eu Ut elit Exce"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/artist/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "artist",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "eu Ut elit Exce",
+                                            "description": "(Required) Unique id for artist."
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n {\n  \"name\": \"anim ut Lorem officia\",\n  \"link\": \"minim i\",\n  \"artist\": \"Ut culpa non\",\n  \"album\": \"exercitation ullamco\"\n },\n {\n  \"name\": \"anim sint a\",\n  \"link\": \"consectetur labore\",\n  \"artist\": \"esse incididunt\",\n  \"album\": \"anim Du\"\n }\n]"
+                        }
+                    ]
+                }
+            ],
+            "id": "4b3cc11c-4559-474e-81d1-79896566a913"
+        },
+        {
+            "name": "album",
+            "item": [
+                {
+                    "name": "list all albums",
+                    "id": "c4a80cb7-cb71-4165-8795-3e5e4f112d79",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/album",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "album"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "a7708025-b7e5-45dd-bbe6-5aeecf09b0d9",
+                            "name": "all albums",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "(Required) Authorization token",
+                                        "key": "Authorization",
+                                        "value": "eu Ut elit Exce"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/album",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "album"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n {\n  \"name\": \"sint quis nostrud reprehenderit enim\"\n },\n {\n  \"name\": \"laborum tempor dolor\"\n }\n]"
+                        }
+                    ]
+                },
+                {
+                    "name": "list one album",
+                    "id": "2532331e-2dec-490d-b694-09c9fc6e5bbc",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/album/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "album",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "id": "29476465-c0db-42a6-9b02-9bd3dc3225d3",
+                                    "key": "id",
+                                    "value": "eu Ut elit Exce",
+                                    "description": "(Required) Unique id for artist."
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "66be27a9-71cf-4900-bf9b-bc3b8d59665c",
+                            "name": "one album details",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "(Required) Authorization token",
+                                        "key": "Authorization",
+                                        "value": "eu Ut elit Exce"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/album/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "album",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "eu Ut elit Exce",
+                                            "description": "(Required) Unique id for artist."
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n {\n  \"name\": \"anim ut Lorem officia\",\n  \"link\": \"minim i\",\n  \"artist\": \"Ut culpa non\",\n  \"album\": \"exercitation ullamco\"\n },\n {\n  \"name\": \"anim sint a\",\n  \"link\": \"consectetur labore\",\n  \"artist\": \"esse incididunt\",\n  \"album\": \"anim Du\"\n }\n]"
+                        }
+                    ]
+                }
+            ],
+            "id": "8c9e6f58-7a68-4796-b518-2d09b4b34d46"
+        }
+    ],
+    "variable": [
+        {
+            "id": "347cb0d8-069a-4357-91fc-7a3d51f05fed",
+            "key": "baseUrl",
+            "value": "https://3d2737e6-912a-44bc-a3ae-3f9cb33fd1d2.mock.pstmn.io",
+            "type": "string"
+        }
+    ]
+}
