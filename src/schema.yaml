@@ -1,0 +1,215 @@
+openapi: 3.0.0
+info:
+  version: v1.0.0
+  title: Songs
+  description: "This is an API for managing details of Songs."
+servers:
+  - url: "https://tenuous-word-production.up.railway.app/"
+paths:
+  /songs:
+    get:
+      summary: songs
+      operationId: getSongs
+      tags:
+        - Song
+      responses:
+        "200":
+          description: Song
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AllSongs"
+    post:
+      summary: Song
+      operationId: addSong
+      tags:
+        - Song
+      requestBody:
+        required: true
+        description: Song
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Song"
+      responses:
+        "201":
+          description: Song
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Song"
+  /songs/{id}:
+    get:
+      summary: Song
+      operationId: getSong
+      parameters:
+        - name: id
+          in: path
+          description: The unique id.
+          required: true
+          schema:
+            type: string
+      tags:
+        - Song
+      responses:
+        "200":
+          description: Song
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Song"
+    put:
+      summary: Song
+      operationId: updateSong
+      parameters:
+        - name: id
+          in: path
+          description: The unique id.
+          required: true
+          schema:
+            type: string
+      tags:
+        - Song
+      requestBody:
+        description: Song
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Song"
+      responses:
+        "204":
+          description: Song
+    delete:
+      summary: Song
+      operationId: deleteSong
+      parameters:
+        - name: id
+          in: path
+          description: The unique id.
+          required: true
+          schema:
+            type: string
+      tags:
+        - Song
+      responses:
+        "204":
+          description: Song
+  /artist:
+    get:
+      summary: 'list all artists'
+      operationId: listAllArtist
+      tags:
+        - artist
+      responses:
+        "200":
+          description: 'all artists'
+          content:
+            application/json: 
+              schema:
+                $ref: "#/components/schemas/AllArtist"
+  /artist/{id}:
+    get:
+      summary: 'list one artist'
+      operationId: listOneArtist
+      tags:
+        - artist
+      parameters:
+        - name: id
+          in: path
+          description: Unique id for artist.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: 'one artist details'
+          content:
+            application/json: 
+              schema:
+                $ref: "#/components/schemas/AllSongs"
+  /album:
+    get:
+      summary: 'list all albums'
+      operationId: listAllAlbums
+      tags:
+        - album
+      responses:
+        "200":
+          description: 'all albums'
+          content:
+            application/json: 
+              schema:
+                $ref: "#/components/schemas/AllAlbum"
+  /album/{id}:
+    get:
+      summary: 'list one album'
+      operationId: listOneAlbum
+      tags:
+        - album
+      parameters:
+        - name: id
+          in: path
+          description: Unique id for artist.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: 'one album details'
+          content:
+            application/json: 
+              schema:
+                $ref: "#/components/schemas/AllSongs"
+components:
+  schemas:
+    AllAlbum:
+      type: array
+      items: 
+        $ref: "#/components/schemas/Artist"
+    Album:
+      type: object
+      properties:
+        name:
+          description: "Song name"
+          type: string
+        album:
+          description: "Album Name"
+          type: string
+    AllArtist:
+      type: array
+      items: 
+        $ref: "#/components/schemas/Artist"
+    Artist:
+      type: object
+      properties:
+        name:
+          description: "Song name"
+          type: string
+        artist:
+          description: "Artist name"
+          type: string
+    AllSongs:
+      type: array
+      items:
+        $ref: "#/components/schemas/Song"
+    Song:
+      type: object
+      required:
+        - name
+        - link
+      properties:
+        id:
+          description: "Email of the user"
+          type: string 
+        name:
+          description: "Email of the user"
+          type: string
+        link:
+          description: "Password of the user"
+          type: string
+        artist:
+          description: "Email of the user"
+          type: string
+        album:
+          description: "Password of the user"
+          type: string
