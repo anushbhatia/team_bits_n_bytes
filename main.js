@@ -44,7 +44,7 @@ let track_list = [
 var requestOptions = {
   method: 'GET',
   redirect: 'follow',
-  "Access-Control-Allow-Headers ": "Origin, Content-Type, Accept"
+  "Access-Control-Allow-Headers": "Origin, Content-Type, Accept"
 
 };
 var settings = {
