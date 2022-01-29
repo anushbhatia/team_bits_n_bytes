@@ -44,8 +44,8 @@ let track_list = [
 var requestOptions = {
   method: 'GET',
   redirect: 'follow',
- "Access-Control-Allow-Origin": "https://tenuous-word-production.up.railway.app/",
-  "Access-Control-Allow-Origin": *
+ "Access-Control-Allow-Origin": "https://tenuous-word-production.up.railway.app/"
+ 
 
 };
 var settings = {
@@ -54,8 +54,7 @@ var settings = {
   "timeout": 0,
   async: false,
   redirect: 'follow',
- "Access-Control-Allow-Origin": "https://tenuous-word-production.up.railway.app/",
-  "Access-Control-Allow-Origin": *
+ "Access-Control-Allow-Origin": "https://tenuous-word-production.up.railway.app/"
 
 };
 
